@@ -1,0 +1,44 @@
+{% extends "utils/base.html" %} 
+{% load static %} 
+{% block page-title %} Information {% endblock page-title %} 
+
+{% block info-class %}active{% endblock info-class %}
+{% block info-url %} {% endblock info-url %}
+
+{% block content %}
+{% comment %}
+	Using CSS Grid for the following tags.  "wonderful.css" defines the layout.
+{% endcomment %}
+	<content>
+		<header> 
+			<div class="welcome">
+				<h1 class='theme'>ECG Waveform Plot</h1>
+			</div>
+		</header>
+		<right-sidebar> </right-sidebar>
+		<left-sidebar> </left-sidebar>
+		<form-area>
+			<form id="id_ecg_interval_form" action="{% url 'info' %}" method="post">
+			    {% csrf_token %}
+			    {{ form.as_p }}
+			    <input class = "button" id="id_button_ecg_ok" type="submit" value="OK">
+			</form>
+			<br />
+			<button disabled class="button progress" id="id_button_ecg_progress" type=button style="display: none"> 
+		
+			</button>
+		</form-area>
+		<dataframe>
+			{% if htmldata %}
+				{{ htmldata | safe }}
+			{% endif %}
+		</dataframe>
+		<graph>
+			<div>
+			<img class = "img" src="data:image/png;base64,{{html_graph}}" alt="Waveform Plot" />
+		    </div>
+		</graph>
+		<footer> </footer>
+	 </content>
+{% endblock content %}
+

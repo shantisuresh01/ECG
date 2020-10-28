@@ -1,0 +1,203 @@
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+.responsive {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* CSS Grid for Dataframe template */
+content {
+  display: grid;
+  grid-gap: 3px;
+  grid-template-areas: 
+    "header header  header header"
+    "left-sidebar form-area  dataframe right-sidebar"
+	"left-sidebar graph graph right-sidebar"
+    "footer footer footer footer";
+   grid-template-rows: 1fr 3fr 7fr 1fr; 
+  /*grid-template-rows: repeat(auto-fit, 400px);*/
+  grid-template-columns: 5% 30% 50% 5%;
+  grid-gap: 6px;
+  height: 100vh; /* <- does the trick to limit the overall height of the container*/
+}
+
+header {
+  grid-area: header;
+}
+left-sidebar {
+  grid-area: left-sidebar;
+}
+
+right-sidebar {
+  grid-area: right-sidebar;
+}
+footer {
+  grid-area: footer;
+}
+form-area {
+	grid-area: form-area;
+	border: 2px solid darkgreen;
+  	text-align: center;
+  	padding: 2px;
+}
+dataframe {
+  grid-area: dataframe;
+  border: 2px solid darkgreen;
+  text-align: center;
+  padding: 2px;
+  overflow-y: auto;
+
+}
+graph {
+  grid-area: graph;
+  border: 2px solid darkgreen;
+  padding: 2px;
+  display: block;
+  object-fit: cover;
+}
+
+
+/* End of CSS Grid for Dataframe template */
+
+/* Start of CSS Grid for Setup Page: */
+.setup_content {
+	display: grid;
+  	grid-gap: 3px;
+  	grid-template-areas: 
+	    "setup_header setup_header setup_header"
+		"setup_left-sidebar setup_form_area setup_right-sidebar"
+	    "setup_footer setup_footer setup_footer";
+	grid-template-rows: 1fr 10fr 1fr; 
+  /*grid-template-rows: repeat(auto-fit, 400px);*/
+  grid-template-columns: 5% 80% 5%;
+  grid-gap: 6px;
+  height: 100vh; /* <- does the trick to limit the overall height of the container*/
+}
+setup_form_area {
+	grid-area: setup_form;
+	background-color: #ccc;
+}
+	
+/* End of CSS Grid for Setup Page */
+
+.img{
+	max-width: 100%; height: auto;
+	display: block;
+}
+.logo{
+	width:80px;
+	height: 60px;
+	padding: 6px;
+}
+.theme{
+	color: darkgreen
+}
+
+button.back{
+  background-color: lightgreen;
+  font-size: 16px;
+  color: darkgreen;
+  padding: 10px 25px;
+}
+button.manage {
+  background-color: green; 
+  font-size: 16px;
+  color: white;
+  padding: 10px 25px;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.button.progress {
+  background-color: #FFFFFF; /* White */
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.button {
+  background-color: green; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+.errorlist {
+	color: red;
+
+	}

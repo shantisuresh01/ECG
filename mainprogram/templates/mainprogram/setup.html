@@ -1,0 +1,59 @@
+{% extends "utils/base.html" %} 
+{% load static %} 
+{% block page-title %} Setup {% endblock page-title %} 
+
+{% block setup-class %}active{% endblock setup-class %}
+{% block setup-url %} {% endblock setup-url %}
+
+{% block content %}
+{% comment %}
+	Using CSS Grid for the following tags.  "wonderful.css" defines the layout.
+{% endcomment %}
+	<setup_content>
+		<setup_header> 
+			<div class="welcome">
+				<h1 class='theme'>ECG Waveform Plot</h1>
+			</div>
+		</setup_header>
+		<setup_right-sidebar> </setup_right-sidebar>
+		<setup_left-sidebar> </setup_left-sidebar>
+		<setup_form-area>
+			<form id="interval_form_id" action="{% url 'setup' %}" method="post">
+			    {% csrf_token %}
+			    {{ form.as_p }}
+			    <input class = "button" type="submit" value="OK">
+			</form>
+		</setup_form-area>
+		<setup_footer> </setup_footer>
+	 </content>
+{% endblock content %}
+
+{% comment %}
+{% extends "utils/base.html" %} 
+{% load static %} 
+{% block page-title %} Line Generator {% endblock page-title %} 
+
+{% block lg-class %}active{% endblock lg-class %}
+{% block lg-url %} {% endblock lg-url %}
+
+
+{% block content %}
+	<div class="welcome">
+		<h1>Input Values</h1>
+		<img src="{% static 'images/logo.png' %}" id="proj1_logo" width="450" height="458" alt="Main Program logo" />
+	
+	</div>
+	<br />
+
+			
+
+	<form id="interval_form_id" action="{% url 'info' %}" method="post">
+	    {% csrf_token %}
+	    {{ form.as_p }}
+	    <input class = "button" type="submit" value="OK">
+	</form>
+	<br />
+	{{ dataframe | safe }}
+{% endblock content %}
+
+{% endcomment %}
